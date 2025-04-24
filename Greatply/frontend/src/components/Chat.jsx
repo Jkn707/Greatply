@@ -11,9 +11,9 @@ function Chat() {
     if (!message.trim()) return;
 
     setIsLoading(true);
-    try {        // Google Cloud: https://greatply-backend-374044169385.us-central1.run.app
+    try {        // Google Cloud: https://greatply-backend-374044169385.us-central1.run.app/api/chat
                   // Local: http://localhost:8080/api/chat    
-      const res = await fetch('https://greatply-backend-374044169385.us-central1.run.app', {
+      const res = await fetch('https://greatply-backend-374044169385.us-central1.run.app/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
