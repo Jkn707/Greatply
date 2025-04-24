@@ -13,11 +13,12 @@ public class ChatController {
 
     private final GPTService chatService;
 
+    //Instanciating Chat Service
     @Autowired
     public ChatController(GPTService chatService) {
         this.chatService = chatService;
     }
-
+    //Sends a request and expects a response
     @PostMapping("/chat")
     public ChatResponse chat(@RequestBody ChatRequest request) {
         String response = chatService.generateResponse(request.getMessage());

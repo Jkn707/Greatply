@@ -25,15 +25,15 @@ public class GPTService {
     public String generateResponse(String userMessage) {
 
         List<Message> messages = new ArrayList<>();
-        
+        // Modifiable Prompt
         messages.add(new SystemMessage("Give me the most diplomatic way to respond to this message:"));
-        
+        // User message to be obtained in Frontend
         messages.add(new UserMessage(userMessage));
-        
+        // Prompt unifies "messages" as a single string.
         Prompt prompt = new Prompt(messages);
         
         ChatResponse response = chatModel.call(prompt);
-        
+        // Separating text of AI Response from metadata
         return response.getResult().getOutput().getText();
     }
 }

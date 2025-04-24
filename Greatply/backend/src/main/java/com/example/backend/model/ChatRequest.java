@@ -1,5 +1,5 @@
 package com.example.backend.model;
-
+// Class to access Requests
 public class ChatRequest {
     private String message;
 
